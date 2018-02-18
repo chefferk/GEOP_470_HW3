@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm,latexsym,paralist}
+\usepackage[margin=1in]{geometry}
+\usepackage{csquotes}
+
+\title{Homework 3: Notes}
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\maketitle
+
+The effects of spherical geometry are not so important for the Earth’s lithosphere since it is very thin compared to the radius\\
+
+In a small body like the moon, the lithosphere can be a substantial fraction of the radius\\
+
+The total heat flow out of the shell through its outer surface is:
+
+$$4\pi {\left( r+\delta r \right)}^ { 2} {q}_{r} \left( r + \delta r \right)$$
+
+The total heat flow into the shell at its inner surface is:
+
+$$4 \pi {r}^{2} {q}_{r} \left(r \right)$$
+
+$q = $ heat flux\\
+$q_{r} = $ radial head flux\\
+
+Since $\delta_{r}$ is infinitesimal, we can expand $q_{r} \left(r + \delta r \right)$ in a Taylor series as:
+
+$${ q }_{ r }\left( r+\delta  \right) ={ q }_{ r }\left( r \right) +\delta r\frac { dq_{ r } }{ dr } +... \qquad \qquad \left ( 4.34 \right)$$
+
+Neglecting powers of $\delta_{r}$, the net heat flow out of the spherical shell is given by:
+
+$$4 \pi \left[ {\left( r + \delta r \right)}^{2} {q}_{r} \left( r + \delta r \right) - {r}^{2} {q}_{r} \left( r \right) \right] $$
+$$= 4 \pi {r}^{2} \left(\frac{2}{r} {q}_{r} + \frac{d {q}_{r}}{dr}\right) \delta_{r} \qquad \qquad (4.35)$$
+
+$H = $ rate of heat production per unit mass [W/kg]\\
+
+Total rate at which heat is produced in the spherical shell is:
+
+$$4 \pi {r}^{2} \rho H \delta r$$
+
+$4 \pi {r}^{2} \delta r = $ the approximate expression for the volume of the shell\\
+
+If we set the rate of heat production equal to the net heat flow out of the spherical shell, we get (heat balance equation):
+
+$$4 \pi {r}^{2} \rho H \delta r = 4 \pi {r}^{2} \left(\frac{2}{r} {q}_{r} + \frac{d {q}_{r}}{dr}\right) \delta_{r}$$
+$$\frac{d{q}_{r}}{dr} + \frac{2 {q}_{r}}{r} = \rho H \qquad \qquad (4.36)$$
+
+Fourier's law in spherical geometry:
+
+$${q}_{r} = -k \frac{dT}{dr} \qquad \qquad (4.37)$$
+
+Applying Fourier's law $(4.37)$ to the heat balance equation $(4.36)$, we get:
+
+$$0 = k \left(\frac{{d}^{2}T}{d{r}^{2}} + \frac{2}{r} \frac{dT}{dr} \right) + \rho H \qquad \qquad (4.38)$$
+or
+$$0 = k \frac{1}{{r}^{2}} \frac{d}{dr} \left({r}^{2}\frac{dT}{dr} \right) + \rho H \qquad \qquad (4.39)$$
+
+By integrating equation $(4.39)$ twice, we get a general expression for the temperature in a sphere or spherical shell with internal heat production and in steady state:
+
+$$T = - \frac{\rho H}{6k} {r}^{2} + \frac{{c}_{1}}{r} + {c}_{2} \qquad \qquad (4.40) $$
+
+${c}_{1}$ and ${c}_{2}$ depend on boundary conditions\\
+
+Example:\\
+$a = $ radius\\
+${T}_{0} = $ outer surface temperature\\
+${c}_{1} = 0$ (in order to have a finite temperature at the center of the sphere)
+
+$${c}_{2} = {T}_{0} + \frac{\rho H {a}^{2}}{6k} \qquad \qquad (4.41)$$
+
+Then, the temperature in the sphere is given by:
+
+$$T = {T}_{0} + \frac{\rho H}{6k} \left( {a}^{2} - {r}^{2} \right) \qquad \qquad (4.42)$$
+
+From equation $(4.37)$ the surface heat flux ${q}_{0}$ at $r = a$ is (conservation of energy that apples no matter what the mode of internal heat transfer in the sphere is.):
+
+$${q}_{0} = \frac{1}{3} \rho H a \qquad \qquad (4.43)$$
+
+
+
+
+\end{document}

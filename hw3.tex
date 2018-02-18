@@ -1,0 +1,123 @@
+\documentclass[titlepage, 11pt]{article}
+\usepackage{amsmath,amssymb,amsthm,latexsym,paralist}
+\usepackage[margin=1in]{geometry}
+\usepackage{csquotes}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+
+\author{Jonathan Foster \\ Keaton Cheffer \\ Kristin Moczygemba}
+\title{Geophysics 470 \\ Homework 3: Heat in a Spherical Body}
+\date{2/14/18}
+
+\begin{document}
+
+\maketitle
+
+% Problem 1
+\begin{problem}\ \\
+T\&S Problem 4-14: What would the central temperature of the Earth be if it were modeled by a sphere  with uniform volumetric heating?\vspace{\baselineskip}
+
+\noindent
+You don't have to start from scratch, use the solution for $T(r)$ with a fixed surface temperature that is given to you (Eq. 4.42).
+\noindent
+Note that the problem doesn't give you $\rho H$, you will have to express the internal heating rate in terms of the surface heat flow (the discussion in section 4.9 covers this).
+\end{problem}
+
+\begin{solution}\ \\
+
+\begin{tabular}{ll}
+Let: & $q_{0}=70$    mWm$^{-2}$\\
+     & $k=4$         Wm$^{-1}$K$^{-1}$\\
+     & $T_{0}=300$   K\\ 
+     & $a = 6370800$ m\\ 
+\end{tabular}\vspace{\baselineskip}
+
+Surface heat flux at $r = a$ is:
+
+$${q}_{0}\left[ \frac{mW}{m^2} \right] = \frac{1}{3} \rho \left[\frac{kg}{{m}^{3}}\right] H\left[\frac{mW}{kg}\right] a\left[m\right]$$ 
+
+Solving for $\rho H$, we get:
+
+$$\rho H \left[ \frac{mW}{m^3} \right] = \frac{3{q}_{0}}{a}\left[\frac{mW}{m^3} \right]$$
+
+Central temperature of a sphere with $r = a$ is:
+\begin{align*}
+T\left[K \right] & = {T}_{0}\left[ K \right] + \frac{\rho H\left[\frac{mW}{m^3} \right]}{6k\left[ \frac{W}{m K} \right]} {a}^{2}\left[m^2 \right]\\
+& = {T}_{0}\left[ K \right] + \frac{\rho H}{6k} {a}^{2} \left[\frac{mWK}{W} \right]\\
+& = {T}_{0}\left[ K \right] + \frac{\rho H}{6k} {a}^{2} \left[\frac{K}{1000} \right]
+\end{align*}
+
+Substituting in $\rho H$, we get:
+
+\begin{align*}
+T & = {T}_{0} + \frac{{q}_{0}}{2(1000k)a} {a}^{2}\\
+& = {T}_{0} + \frac{{q}_{0}a}{2000k}
+\end{align*}
+
+Plugging in values, we get:
+
+\begin{align*}
+T & = 300 + \frac{70\times6370800}{2000\times4} \\
+T & = \boxed{56044.5 \ K}
+\end{align*}
+
+\end{solution}
+
+\newpage
+
+% Problem 2
+\begin{problem}\ \\
+(a) Suppose that a spherical planet is broken into two layers, core and mantle, each of which has a different heat production rate, $\rho H$ and a different conductivity, $k$. Calculate the temperature profile in this planet, where the core radius is $b$, and the planet radius is $a$. The surface temperature is fixed at Ts. This is a spherical version of the two-layer problem you did in HW2; now the bottom layer is a sphere and the top layer is a spherical shell. In each layer, the general spherical solution (Eq. 4.40) applies, so don’t derive it!
+
+$$T = - \frac{\rho H}{6k}{r}^{2} + \frac{c_1}{r} + c_{2} \qquad \qquad (4.40)$$
+
+\noindent
+You just have to write down the boundary conditions to find expressions for the integration constants.\vspace{\baselineskip}
+
+\noindent
+There’s a lot of algebra here, but you will use this solution in the next 3 problems.\vspace{\baselineskip}
+
+\noindent
+(b) Write an expression for $T(0)$, the temperature at the center of the planet. It will be advantageous for you to write your solution with terms that have the ratio of $k$ values. To do this, you multiply one of the $k$’s (I use the core conductivity, $k_c$) by 1, but a particular version of 1:
+
+$$k_{c} = k_{c} \left(\frac{k_{m}}{k_{m}}\right) = k_{m}\left(\frac{k_{c}}{k_{m}}\right)$$
+
+\noindent
+So if I make this substitution everywhere, then gather together terms and that have common factors of $k_{m}$, its easier to see what the role of two different conductivities is. 
+\end{problem}
+
+\begin{solution}
+
+\end{solution}
+
+\newpage
+
+% Problem 3
+\begin{problem}\ \\
+T\&S 4-16: It is assumed that a constant density planetary body of radius $a$ has a core of radius $b$. There is uniform heat production in the core but no heat production outside the core. Determine the temperature at the center of the body in terms of $a, b, k, T_0$ (the surface temperature), and $q_0$ (the surface heat flow).\vspace{\baselineskip}
+
+\noindent
+This is just a special case of the Problem 2, with the $k$ values equal and one of the $\rho H = 0$. You can easily modify your solution from 2 to write down $T(r)$ so don't set up and solve the problem all over again! Make a sketch of the solution, $T(r)$ and write the expression for $T(r=0)$.
+\end{problem}
+
+\begin{solution}
+
+\end{solution}
+
+\newpage
+
+% Problem 4
+\begin{problem}\ \\
+T\&S Problem 4-17: Determine the steady-state conduction temperature profile for a spherical model of the Moon in which all the radioactivity is confined to an outer shell whose radii are $b$ and $a$ ($a$ is the lunar radius). In the outer shell $H$ us uniform.\vspace{\baselineskip}
+
+\noindent
+This is another special case of the Problem 2, with equal $k$'s and one of the $\rho H = 0$. Make a sketch of the solution, $T(r)$ and write the expression for $T(r = 0)$. Using the numbers form the text section 4.10 ($T_0 = 250$ K, $q_0 = 18\times{10}^{-3}$ W/m$^{2}$, lunar radius = 1738 km) and assuming the layer contain the radioactivity is 100 km thick, calculate first $\rho H$ in the outer layer and then temperature at the center of the moon. Compare this to the temperature calculated in the text for a uniform Moon and explain in words why one case is cooler than the other.
+\end{problem}
+
+\begin{solution}
+
+\end{solution}
+
+\end{document}
