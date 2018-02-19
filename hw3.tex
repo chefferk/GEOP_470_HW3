@@ -88,7 +88,111 @@ $$k_{c} = k_{c} \left(\frac{k_{m}}{k_{m}}\right) = k_{m}\left(\frac{k_{c}}{k_{m}
 So if I make this substitution everywhere, then gather together terms and that have common factors of $k_{m}$, its easier to see what the role of two different conductivities is. 
 \end{problem}
 
-\begin{solution}
+\begin{solution}\ \\
+\noindent
+(a) 
+Steady-State Conservation:
+
+$$0 = k_c \left(\frac{d^2 T_c}{dr^2} + \frac{2}{r} \frac{dT_c}{dr}\right) + \rho H_c$$
+
+$$0 = k_m \left(\frac{d^2 T_m}{dr^2} + \frac{2}{r} \frac{dT_m}{dr}\right) + \rho H_m$$
+
+General Solutions:
+
+$$T_c = -\frac{\rho_c H_c}{6k_c}r^2 + \frac{c_1}{r} + c_2$$
+
+$$T_m = -\frac{\rho_m H_m}{6k_m}r^2 + \frac{c_3}{r} + c_4$$
+
+Temperature Gradients:
+
+\begin{align*}
+    q_c & = -k_c \frac{dT_c}{dr}\\
+    & = \frac{\rho_c H_c}{3}r + \frac{c_1 k_c}{r^2}
+\end{align*}
+
+\begin{align*}
+    q_m & = -k_m \frac{dT_m}{dr}\\
+    & = \frac{\rho_c H_m}{3}r + \frac{c_3 k_m}{r^2}
+\end{align*}
+
+\newpage
+\noindent
+Boundary Conditions:
+\begin{enumerate}
+    \item Same temperature at layer interface: $T_m (r=b) = T_c (r=b)$
+    \item Same heat flux at layer interface: $q_m (r=b) = q_c (r=b)$
+    \item Temperature gradient approaches zero as $r$ approaches zero: $\frac{dT_c}{dr}(r=0)=0 \therefore \boxed{c_1 =0}$
+    \item Fixed temperature at the surface: $T_m (r=a) = T_s$
+\end{enumerate}
+
+\noindent
+Applying Boundary Conditions:\\
+
+Using the general solution for $T_c$ and boundary condition (3), we get:
+
+$$T_c = -\frac{\rho_c H_c}{6k_c}r^2 + c_2$$
+
+At boundary condition (1) we get:
+
+$$T_c (b) = -\frac{\rho_c H_c}{6k_c}b^2 + c_2$$
+
+Solving for $c_2$ we get:
+
+$$ c_2 = T_b + \frac{\rho_c H_c}{6k_c}b^2 $$
+
+Plugging $c_2$ back into $T_c$, we get:
+
+$$\boxed{ T_c = \frac{\rho_c H_c}{6k_c}\left( b^2 - r^2 \right) + T_b}$$
+
+Using the boundary condition (2), we see that:
+
+$$-\frac{k_c dT_c}{dr} = -\frac{k_m dT_m}{dr}$$
+
+Using temperature gradients we get:
+
+$$-\frac{\rho_c H_c}{3}r = -\frac{\rho_m H_m}{3}r - \frac{k_m c_3}{r^2}$$
+
+Solving for $c_3$, we get:
+
+$$c_3 = \frac{\rho_c H_c}{3k_m r}b^3 - \frac{\rho_m H_m r}{3k_m}b^3$$
+
+Plugging $c_3$ back into the general solution for $T_m$ we get:
+
+$$T_m = -\frac{\rho_m H_m}{6k_m}r^2 + \frac{\rho_c H_c}{3k_m r}b^3 - \frac{\rho_m H_m}{3k_m r}b^3 + c_4$$
+
+At boundary condition (4) we get:
+
+$$T_m (a) = -\frac{\rho_m H_m}{2k_m}a^2 + \frac{\rho_c H_c}{3k_m}a^2 + c_4$$
+
+\newpage
+Solving for $c_4$ we find:
+
+$$c_4 = T_s + \frac{\rho_m H_m}{2k_m}a^2 - \frac{\rho_c H_c}{3k_c}a^2$$
+
+Finally plugging $c_4$ back into $T_m$, we get:
+
+$$\boxed{ T_m = T_s - \frac{\rho_m H_m}{6k_m}r^2 + \frac{\rho_c H_c}{3k_m r}b^3 - \frac{\rho_m H_m}{3k_m r}b^3 - \frac{\rho_c H_c}{3k_m}a^2 + \frac{\rho_m H_m}{2k_m}a^2}$$
+
+\noindent
+(b)\\
+
+$k_c = k_c\left(\frac{k_m}{k_m}\right) = k_m\left( \frac{k_c}{k_m} \right)$\\
+
+Solving for $T(b)$ we get:
+\begin{align*}
+T_b & = T_s -\frac{\rho_m H_m}{6k_m}(b)^2 + \frac{\rho_c H_c}{3k_m (b)}b^3 - \frac{\rho_m H_m}{3k_m (b)}b^3 - \frac{\rho_c H_c}{3k_m}a^2 + \frac{\rho_m H_m}{2k_m}a^2\\
+& = T_s + \frac{\rho_m H_m}{2k_m}\left( a^2 - b^2 \right) + \frac{\rho_c H_c}{3k_m}\left(b^2-a^2\right)
+\end{align*}
+
+Plugging $T_b$ into our original $T_c(r)$ equation we get:
+
+
+    $$T(r) = T_s + \frac{\rho_c H_c}{6k_c}\left( b^2 - r^2 \right) + \frac{\rho_m H_m}{2k_m}\left( a^2 - b^2 \right) + \frac{\rho_c H_c}{3k_m}\left( b^2 - a^2 \right)$$
+    
+Finally plugging 0 in we get:
+
+    $$\boxed{T(0) = T_s + \frac{\rho_c H_c}{6k_c}b^2 + \frac{\rho_m H_m}{2k_m}\left( a^2 - b^2 \right) + \frac{\rho_c H_c}{3k_m}\left( b^2 - a^2 \right)}$$
+
 
 \end{solution}
 
@@ -102,7 +206,39 @@ T\&S 4-16: It is assumed that a constant density planetary body of radius $a$ ha
 This is just a special case of the Problem 2, with the $k$ values equal and one of the $\rho H = 0$. You can easily modify your solution from 2 to write down $T(r)$ so don't set up and solve the problem all over again! Make a sketch of the solution, $T(r)$ and write the expression for $T(r=0)$.
 \end{problem}
 
-\begin{solution}
+\begin{solution}\ \\
+
+\noindent
+$k_c = k_m$\\
+$\rho_1 = \rho_2$\\
+$H_m = 0 \to \rho H_m = 0$\\
+
+At $H_m = 0$:
+
+$$T_c = \frac{\rho H_c}{6k_c}\left( b^2 - r^2 \right) + \frac{\rho b^2}{3k_m}(H_c)(1-\frac{b}{a}) + T_s$$
+
+$$T_m = \frac{\rho b^3}{3k_m}H_c \left( \frac{1}{r} - \frac{1}{a} \right) + T_s$$
+
+At $r=0$:
+
+$$T_c(r=0) = \frac{\rho H_c}{6k_c}b^2 +\frac{\rho H_c}{3k_m}b^2 - \frac{\rho H_c }{3ak_m}b^3 + T_s$$
+
+At  $k_c = k_m$:
+
+\begin{align*}
+    T_c(r=0) & = \frac{\rho H_c}{6k}b^2 + \frac{\rho H_c}{3k_m}b^2 - \frac{\rho H_c}{3ak}b^3\\
+    & = \frac{\rho H_c}{2k}b^2 - \frac{\rho H_c}{3ak}b^3 + T_s
+\end{align*}
+
+At $q_0 = \frac{1}{3}\rho H a$:
+\begin{align*}
+    T_c(r=0) & = \frac{3q_0}{2ak}b^2 - \frac{2q_0}{3 a^2 k}b^3 + T_s\\
+    & = \frac{3q_0}{2ak}b^2 - \frac{q_0}{a^2k}b^3 + T_s
+\end{align*}
+
+$T_s = T_0$:
+
+$$\boxed{T_c(r=0) = \frac{q_0 b^3}{a^2k}\left( \frac{3a}{2b} - 1 \right) + T_0}$$
 
 \end{solution}
 
@@ -116,7 +252,37 @@ T\&S Problem 4-17: Determine the steady-state conduction temperature profile for
 This is another special case of the Problem 2, with equal $k$'s and one of the $\rho H = 0$. Make a sketch of the solution, $T(r)$ and write the expression for $T(r = 0)$. Using the numbers form the text section 4.10 ($T_0 = 250$ K, $q_0 = 18\times{10}^{-3}$ W/m$^{2}$, lunar radius = 1738 km) and assuming the layer contain the radioactivity is 100 km thick, calculate first $\rho H$ in the outer layer and then temperature at the center of the moon. Compare this to the temperature calculated in the text for a uniform Moon and explain in words why one case is cooler than the other.
 \end{problem}
 
-\begin{solution}
+\begin{solution}\ \\
+
+\begin{tabular}{ll}
+Let: & $q_{0}=18\times 10^{-3}$     mWm$^{-2}$\\
+     & $k=3.3$                    Wm$^{-1}$K$^{-1}$\\
+     & $T_{0}=250$                K\\ 
+     & $a = 1738000$              m\\
+     & $b = 1638000$              m
+\end{tabular}\vspace{\baselineskip}
+
+$$T(0) = \frac{\rho_m H_m}{2k}(a^2 - b^2) +T_0$$
+
+$$q_0 = \frac{\rho H}{3}(a-b)$$
+
+Solving for $\rho H$ we get:
+
+$$\rho H = \frac{3q_0}{a-b}$$
+
+Plugging our boundary conditions into $\rho H$ we get:
+
+\begin{align*}
+    \rho H & = \frac{3(18 \times 10^{-3})}{(1738000 - 1638000)}\\
+    & = 5.4 \times 10^{-7}
+\end{align*}
+
+Plugging the remaining boundary conditions into our original equation gives us:
+
+\begin{align*}
+    T(0) & = \frac{5.4\times 10^{-7}}{2(3.3)}\left( 1738000^2 - 1638000^2 \right) + 250\\
+    & = \boxed{27872 K}
+\end{align*}
 
 \end{solution}
 
